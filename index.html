@@ -39,19 +39,20 @@
             <strong>est-ce que tu peux y aller sans malaise ?</strong>
           </p>
           <div class="cta">
-            <a class="btn" href="#bientot">Voir la feuille de route</a>
-            <a class="btn btn--ghost" href="#contact">Proposer un lieu</a>
+            <a class="btn btn--solid" href="#contact">Proposer un lieu</a>
+            <a class="btn btn--ghost" href="#bientot">Feuille de route</a>
           </div>
-          <p class="fine">Projet en construction. Bientôt : premières fiches + newsletter (1 idée/semaine).</p>
+          <p class="fine">Projet en construction : on publie petit, on itère, et on garde ça simple.</p>
         </div>
 
         <div class="card">
           <h2 class="card__title">Le filtre “sans malaise”</h2>
           <ul class="list">
-            <li>On peut rester 30–60 min sans se sentir de trop</li>
-            <li>Ambiance : calme / lecture / comptoir / table 1 personne</li>
-            <li>Budget clair (et pas besoin de consommer 12€)</li>
+            <li>Tu peux rester 30–60 min sans te sentir de trop</li>
+            <li>Ambiance compatible (calme, lecture, comptoir, table 1 personne)</li>
+            <li>Budget clair (et pas l’impression de “devoir consommer”)</li>
           </ul>
+          <p class="fine">Objectif : réduire la friction. Décider vite. Sortir plus facilement.</p>
         </div>
       </div>
     </section>
@@ -78,33 +79,62 @@
 
     <section id="bientot" class="section section--alt">
       <div class="container">
-        <h2>À venir (MVP)</h2>
-        <ol class="steps">
-          <li><strong>10 fiches</strong> (café/bar/musée/ciné/balade) avec tags “sans malaise”.</li>
-          <li><strong>5 articles</strong> SEO (ex: “où aller seul à Bruxelles quand il pleut ?”).</li>
-          <li><strong>Formulaire</strong> “proposer un lieu”.</li>
-          <li><strong>Newsletter</strong> : 1 idée par semaine.</li>
-        </ol>
-        <p class="muted">Objectif : publier vite, itérer avec les retours, et construire une base d’emails.</p>
+        <h2>Ce qui arrive</h2>
+        <div class="grid2">
+          <div class="box">
+            <h3>Fiches “solo-friendly”</h3>
+            <ul class="bullets">
+              <li>10 premières fiches (café/bar/musée/ciné/balade)</li>
+              <li>Tags clairs (calme, lecture-friendly, comptoir…)</li>
+              <li>Infos pratiques (budget, métro, timing)</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Articles utiles</h3>
+            <ul class="bullets">
+              <li>5 articles SEO (pluie, budget, “où aller seul”…)</li>
+              <li>Ton francophone, concret, sans injonction sociale</li>
+              <li>Objectif: décider vite, sortir plus facilement</li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted">On publie petit, on itère, et on garde ça simple.</p>
       </div>
     </section>
 
     <section id="contact" class="section">
       <div class="container">
-        <h2>Contact</h2>
+        <h2>Proposer un lieu</h2>
         <div class="contact">
           <div>
-            <p class="lead">Tu as un endroit “OK solo” ? Envoie-le et je le teste / j’en fais une fiche.</p>
-            <p class="muted">(Formulaire à venir. En attendant :)</p>
-            <p><a class="btn btn--gold" href="mailto:vh.thomas@hotmail.com?subject=Bruxelles%20Solo%20—%20suggestion%20de%20lieu&body=Salut%20Thom%2C%0A%0AVoici%20une%20suggestion%20solo-friendly%20%C3%A0%20Bruxelles%20%3A%0A- Nom%20%3A%0A- Adresse%20%3A%0A- Pourquoi%20c%E2%80%99est%20OK%20solo%20%3A%0A- Budget%20%3A%0A%0AMerci%20!">Proposer un lieu</a></p>
+            <p class="lead">Tu as un endroit vraiment <strong>solo-friendly</strong> ? Envoie-le ici. Je reviens si je l’ajoute (ou si j’ai une question).</p>
+            <p class="muted">Ton email n’est utilisé que pour te répondre. Pas de newsletter pour l’instant.</p>
           </div>
           <div class="box">
-            <h3>Ce que je cherche</h3>
-            <ul class="list">
-              <li>Lieu accessible sans réservation</li>
-              <li>Ambiance qui tolère le “tout seul”</li>
-              <li>Infos concrètes (prix, timing, métro)</li>
-            </ul>
+            <form class="form" action="/contact.php" method="POST">
+              <div class="form__row">
+                <label for="name">Ton prénom</label>
+                <input id="name" name="name" type="text" autocomplete="given-name" required>
+              </div>
+              <div class="form__row">
+                <label for="email">Ton email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="form__row">
+                <label for="place">Le lieu</label>
+                <input id="place" name="place" type="text" placeholder="Nom + quartier" required>
+              </div>
+              <div class="form__row">
+                <label for="why">Pourquoi c’est “sans malaise” ?</label>
+                <textarea id="why" name="why" rows="4" placeholder="Comptoir, ambiance calme, tables 1 pers., lecture-friendly…" required></textarea>
+              </div>
+              <div class="form__row">
+                <label for="details">Détails utiles (optionnel)</label>
+                <textarea id="details" name="details" rows="3" placeholder="Budget, horaires, métro, réservation…"></textarea>
+              </div>
+              <button class="btn btn--solid" type="submit">Envoyer</button>
+              <p class="fine">En envoyant, tu acceptes que je te réponde si besoin. Rien d’autre.</p>
+            </form>
           </div>
         </div>
       </div>
@@ -114,7 +144,7 @@
   <footer class="footer">
     <div class="container">
       <div>© <span id="year"></span> Bruxelles Solo</div>
-      <div class="muted">Un projet de Thom Leroy</div>
+      <div class="muted">Un projet de Thom Leroy — Bruxelles</div>
     </div>
   </footer>
 

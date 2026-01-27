@@ -1,4 +1,37 @@
 async function loadPlaces(){
+  // 1) Try Supabase (if configured)
+  try{
+    const cfg = window.__SUPABASE__;
+    if(cfg?.url && cfg?.anonKey && window.supabase){
+      const client = window.supabase.createClient(cfg.url, cfg.anonKey);
+      const { data, error } = await client
+        .from('places')
+        .select('id,name,category,area,address,transit,budget,duration_min,duration_max,time_of_day,rainy_ok,social_energy,solo_why,website')
+        .limit(200);
+      if(error) throw error;
+      if(Array.isArray(data) && data.length){
+        return data.map(row => ({
+          id: row.id,
+          name: row.name,
+          category: row.category,
+          area: row.area,
+          address: row.address,
+          transit: row.transit || [],
+          budget: row.budget,
+          duration: { min: row.duration_min ?? 0, max: row.duration_max ?? 999 },
+          timeOfDay: row.time_of_day || [],
+          rainyOk: !!row.rainy_ok,
+          socialEnergy: row.social_energy,
+          soloWhy: row.solo_why,
+          links: row.website ? { website: row.website } : {}
+        }));
+      }
+    }
+  }catch(e){
+    // Fall back to JSON
+  }
+
+  // 2) Fallback: local JSON
   const res = await fetch('./data/places.json', {cache:'no-store'});
   if(!res.ok) throw new Error('Failed to load places');
   return res.json();

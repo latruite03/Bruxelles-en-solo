@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./app.css" />
 </head>
 <body>
   <header class="header">
@@ -21,9 +22,9 @@
         </div>
       </div>
       <nav class="nav">
+        <a href="#outil">L’outil</a>
         <a href="#concept">Le concept</a>
-        <a href="#bientot">À venir</a>
-        <a href="#contact" class="btn btn--ghost">Contact</a>
+        <a href="#contact" class="btn btn--ghost">Proposer</a>
       </nav>
     </div>
   </header>
@@ -32,18 +33,15 @@
     <section class="hero">
       <div class="container hero__grid">
         <div>
-          <div class="hero__badge">Guide solo-friendly · Bruxelles</div>
-          <p class="kicker">Bruxelles — pour les jours où tu veux sortir… mais pas “socialiser”.</p>
-          <h1>Des idées de sorties solo qui ne font pas bizarre.</h1>
-          <p class="lead">
-            Cafés, bars, musées, cinés, balades, endroits “OK tout seul” — triés avec un filtre simple :
-            <strong>est-ce que tu peux y aller sans malaise ?</strong>
-          </p>
+          <div class="hero__badge">Bruxelles Solo</div>
+          <p class="kicker">Un outil simple, pas un blog.</p>
+          <h1>Tu es seul. Tu as un créneau. On choisit avec toi (sans te forcer).</h1>
+          <p class="lead">Tu réponds à 4–5 questions. On te propose 3 idées <strong>solo-friendly</strong> avec le minimum d’infos pour y aller.</p>
           <div class="cta">
-            <a class="btn btn--solid" href="#contact">Proposer un lieu</a>
-            <a class="btn btn--ghost" href="#bientot">Feuille de route</a>
+            <a class="btn btn--solid" href="#outil">Lancer l’outil</a>
+            <a class="btn btn--ghost" href="#contact">Proposer un lieu</a>
           </div>
-          <p class="fine">Des idées concrètes, testées et décrites sans chichis. Tu choisis, tu sors, c’est tout.</p>
+          <p class="fine">Ce site n’essaie pas de te motiver. Il essaie juste de te simplifier la vie.</p>
         </div>
 
         <div class="hero__visual" aria-hidden="true">
@@ -53,11 +51,92 @@
         <div class="card">
           <h2 class="card__title">Le filtre “sans malaise”</h2>
           <ul class="list">
-            <li>Tu peux rester 30–60 min sans te sentir de trop</li>
-            <li>Ambiance compatible (calme, lecture, comptoir, table 1 personne)</li>
-            <li>Budget clair (et pas l’impression de “devoir consommer”)</li>
+            <li>Tu peux y être seul sans devoir “justifier”</li>
+            <li>Tu peux partir quand tu veux (et ça compte)</li>
+            <li>On privilégie le concret : budget, métro, durée</li>
           </ul>
-          <p class="fine">Objectif : réduire la friction. Décider vite. Sortir plus facilement.</p>
+          <p class="fine">Et si tu as une bonne adresse, tu me la donnes (je la mets dans la base).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="outil" class="soloApp">
+      <div class="container soloApp__grid">
+        <div class="soloApp__panel">
+          <h2 class="soloApp__title">Choisis ton contexte</h2>
+          <p class="soloApp__hint">Promis : pas de questionnaire infini. Juste ce qu’il faut.</p>
+
+          <form id="soloForm" class="form">
+            <div class="formGrid">
+              <div>
+                <label for="duration">Temps disponible</label>
+                <select class="select" id="duration" name="duration">
+                  <option value="quick">30–45 min</option>
+                  <option value="oneTwo" selected>1–2h</option>
+                  <option value="long">2–4h</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="moment">Moment</label>
+                <select class="select" id="moment" name="moment">
+                  <option value="day">Maintenant (journée)</option>
+                  <option value="evening" selected>Ce soir</option>
+                  <option value="night">Plus tard</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="energy">Énergie sociale</label>
+                <select class="select" id="energy" name="energy">
+                  <option value="zero" selected>Zéro (je veux être invisible)</option>
+                  <option value="low">Basse (neutre)</option>
+                  <option value="neutral">OK un peu</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="rain">Météo</label>
+                <select class="select" id="rain" name="rain">
+                  <option value="any" selected>Peu importe</option>
+                  <option value="rain">Pluie / froid</option>
+                  <option value="dry">Sec (balade OK)</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="budget">Budget</label>
+                <select class="select" id="budget" name="budget">
+                  <option value="any" selected>Peu importe</option>
+                  <option value="low">€ / €€</option>
+                  <option value="mid">€€ / €€€</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="category">Type</label>
+                <select class="select" id="category" name="category">
+                  <option value="any" selected>Surprends-moi</option>
+                  <option value="cafe">Café</option>
+                  <option value="library">Bibliothèque</option>
+                  <option value="museum">Musée</option>
+                  <option value="cinema">Cinéma</option>
+                  <option value="bar">Bar</option>
+                  <option value="walk">Balade</option>
+                </select>
+              </div>
+
+              <div class="span2 actions">
+                <button class="btn btn--solid" type="submit">Me proposer 3 idées</button>
+                <button id="soloReroll" class="btn btn--ghost" type="button">Autres idées</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <div id="soloResults"></div>
+          <p class="fine">Tu veux améliorer la base ? Propose un lieu (nom + quartier + pourquoi c’est OK en solo). C’est déjà énorme.</p>
         </div>
       </div>
     </section>
@@ -84,26 +163,27 @@
 
     <section id="bientot" class="section section--alt">
       <div class="container">
-        <h2>Guides rapides</h2>
+        <h2>La base (en construction)</h2>
         <div class="grid2">
           <div class="box">
-            <h3>Pour choisir vite</h3>
+            <h3>Ce qu’on stocke</h3>
             <ul class="bullets">
-              <li><a href="./articles/20-idees.html">Bruxelles en solo : 20 idées de sorties faciles</a></li>
-              <li><a href="./articles/pluie.html">Bruxelles sous la pluie : 12 idées solo-friendly</a></li>
-              <li><a href="./articles/apres-18h.html">Après 18h : quoi faire le soir en solo</a></li>
+              <li>Nom + quartier</li>
+              <li>Catégorie (café, musée, ciné, bar, balade…)</li>
+              <li>Budget + durée typique</li>
+              <li>Pourquoi c’est OK en solo</li>
             </ul>
           </div>
           <div class="box">
-            <h3>Pour se poser</h3>
+            <h3>Ce qu’on fera ensuite</h3>
             <ul class="bullets">
-              <li><a href="./articles/cafes-lire-ecrire.html">Cafés pour lire/écrire en solo</a></li>
-              <li><a href="./articles/musees-solo.html">Musées à faire en solo (à ton rythme)</a></li>
-              <li class="muted">(Restaurants solo-friendly : bientôt — et oui, c’est un vrai sujet.)</li>
+              <li>Ouverture / horaires (quand c’est fiable)</li>
+              <li>Mode “restaurants solo-friendly” (oui)</li>
+              <li>Mode “coloc / logement” (oui aussi)</li>
             </ul>
           </div>
         </div>
-        <p class="muted">Si tu as une bonne adresse, propose-la (je lis tout).</p>
+        <p class="muted">Le but : que l’outil te sorte une idée faisable en 10 secondes.</p>
       </div>
     </section>
 
@@ -156,5 +236,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script src="./app.js"></script>
 </body>
 </html>

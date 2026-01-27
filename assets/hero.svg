@@ -1,0 +1,73 @@
+<svg width="960" height="540" viewBox="0 0 960 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0ea5e9" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#0f172a" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0f172a" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#0f172a" stop-opacity="0.68"/>
+    </linearGradient>
+    <filter id="soft" x="-50" y="-50" width="1060" height="640" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="540" rx="28" fill="url(#bg)"/>
+
+  <!-- Subtle blobs -->
+  <g filter="url(#soft)">
+    <circle cx="220" cy="120" r="120" fill="#0ea5e9" fill-opacity="0.22"/>
+    <circle cx="760" cy="180" r="140" fill="#0f172a" fill-opacity="0.12"/>
+    <circle cx="520" cy="420" r="160" fill="#0ea5e9" fill-opacity="0.10"/>
+  </g>
+
+  <!-- Simple skyline -->
+  <g opacity="0.9">
+    <!-- buildings -->
+    <rect x="120" y="250" width="70" height="170" rx="10" fill="#0f172a" fill-opacity="0.10" stroke="#0f172a" stroke-opacity="0.14"/>
+    <rect x="205" y="210" width="85" height="210" rx="10" fill="#0f172a" fill-opacity="0.08" stroke="#0f172a" stroke-opacity="0.14"/>
+    <rect x="305" y="265" width="62" height="155" rx="10" fill="#0f172a" fill-opacity="0.09" stroke="#0f172a" stroke-opacity="0.14"/>
+    <rect x="385" y="235" width="110" height="185" rx="10" fill="#0f172a" fill-opacity="0.07" stroke="#0f172a" stroke-opacity="0.14"/>
+    <rect x="510" y="200" width="80" height="220" rx="10" fill="#0f172a" fill-opacity="0.09" stroke="#0f172a" stroke-opacity="0.14"/>
+    <rect x="605" y="250" width="70" height="170" rx="10" fill="#0f172a" fill-opacity="0.08" stroke="#0f172a" stroke-opacity="0.14"/>
+    <rect x="690" y="225" width="130" height="195" rx="10" fill="#0f172a" fill-opacity="0.06" stroke="#0f172a" stroke-opacity="0.14"/>
+
+    <!-- windows (very subtle) -->
+    <g fill="#0f172a" fill-opacity="0.10">
+      <rect x="145" y="278" width="10" height="10" rx="2"/>
+      <rect x="165" y="278" width="10" height="10" rx="2"/>
+      <rect x="145" y="300" width="10" height="10" rx="2"/>
+      <rect x="165" y="300" width="10" height="10" rx="2"/>
+
+      <rect x="230" y="238" width="10" height="10" rx="2"/>
+      <rect x="250" y="238" width="10" height="10" rx="2"/>
+      <rect x="230" y="260" width="10" height="10" rx="2"/>
+      <rect x="250" y="260" width="10" height="10" rx="2"/>
+
+      <rect x="415" y="262" width="10" height="10" rx="2"/>
+      <rect x="435" y="262" width="10" height="10" rx="2"/>
+      <rect x="455" y="262" width="10" height="10" rx="2"/>
+
+      <rect x="540" y="228" width="10" height="10" rx="2"/>
+      <rect x="560" y="228" width="10" height="10" rx="2"/>
+      <rect x="540" y="250" width="10" height="10" rx="2"/>
+      <rect x="560" y="250" width="10" height="10" rx="2"/>
+
+      <rect x="730" y="253" width="10" height="10" rx="2"/>
+      <rect x="750" y="253" width="10" height="10" rx="2"/>
+      <rect x="770" y="253" width="10" height="10" rx="2"/>
+    </g>
+  </g>
+
+  <!-- A simple figure (solo) -->
+  <g transform="translate(455 330)">
+    <circle cx="25" cy="20" r="12" fill="url(#ink)" fill-opacity="0.18"/>
+    <path d="M25 36c-18 0-30 10-30 28 0 6 4 10 10 10h40c6 0 10-4 10-10 0-18-12-28-30-28Z" fill="url(#ink)" fill-opacity="0.12"/>
+    <path d="M2 90c8-20 22-30 44-30 22 0 36 10 44 30" stroke="#0f172a" stroke-opacity="0.18" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- Title text (subtle, optional) -->
+  <text x="40" y="70" font-family="Inter, system-ui" font-size="20" font-weight="700" fill="#0f172a" fill-opacity="0.55">Bruxelles Solo</text>
+  <text x="40" y="95" font-family="Inter, system-ui" font-size="14" font-weight="600" fill="#0f172a" fill-opacity="0.42">Sans malaise · solo-friendly</text>
+</svg>

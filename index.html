@@ -5,45 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bruxelles Solo — sans malaise</title>
   <meta name="description" content="Bruxelles Solo : idées et lieux vraiment solo-friendly (sans malaise)." />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./app.css" />
+
+  <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="./supabase-config.js"></script>
 </head>
 <body>
   <header class="header">
     <div class="container">
-      <div class="brand">
+      <a href="/" class="brand">
         <div class="mark" aria-hidden="true">BS</div>
         <div>
           <div class="brand__name">Bruxelles Solo</div>
-          <div class="brand__tag">Sans malaise · solo-friendly</div>
+          <div class="brand__tag">Sans malaise</div>
         </div>
-      </div>
+      </a>
       <nav class="nav">
-        <a href="#outil">L’outil</a>
+        <a href="#outil">L'outil</a>
         <a href="#concept">Le concept</a>
-        <a href="#contact" class="btn btn--ghost">Proposer</a>
+        <a href="#contact" class="btn btn--ghost btn--sm">Proposer</a>
       </nav>
     </div>
   </header>
 
   <main>
+    <!-- HERO SECTION -->
     <section class="hero">
       <div class="container hero__grid">
         <div>
           <div class="hero__badge">Bruxelles Solo</div>
           <p class="kicker">Un outil simple. Point.</p>
-          <h1>Tu es seul. Tu as un créneau. On trouve une idée (sans y passer 20 minutes).</h1>
-          <p class="lead">Tu réponds à 4–5 questions. Je te propose 3 idées <strong>solo-friendly</strong>, avec juste ce qu’il faut pour y aller.</p>
+          <h1>Tu es seul. Tu as un créneau. On trouve une idée.</h1>
+          <p class="lead">Tu réponds à 4–5 questions. Je te propose 3 idées <strong>solo-friendly</strong>, avec juste ce qu'il faut pour y aller. Sans y passer 20 minutes.</p>
           <div class="cta">
-            <a class="btn btn--solid" href="#outil">Lancer l’outil</a>
+            <a class="btn btn--solid" href="#outil">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              Lancer l'outil
+            </a>
             <a class="btn btn--ghost" href="#contact">Proposer un lieu</a>
           </div>
-          <p class="fine">Je ne vais pas te “motiver”. Je vais juste te simplifier la décision. (C’est déjà pas mal.)</p>
+          <p class="fine">Je ne vais pas te "motiver". Je vais juste te simplifier la décision.</p>
         </div>
 
         <div class="hero__visual" aria-hidden="true">
@@ -51,31 +64,32 @@
         </div>
 
         <div class="card">
-          <h2 class="card__title">Le filtre “sans malaise”</h2>
+          <h2 class="card__title">Le filtre "sans malaise"</h2>
           <ul class="list">
-            <li>Tu peux y être seul sans devoir “justifier”</li>
+            <li>Tu peux y être seul sans devoir "justifier"</li>
             <li>Tu peux partir quand tu veux (et ça compte)</li>
             <li>On privilégie le concret : budget, métro, durée</li>
           </ul>
-          <p class="fine">Et si tu as une bonne adresse, tu me la donnes (je la mets dans la base).</p>
+          <p class="fine">Et si tu as une bonne adresse, tu me la donnes.</p>
         </div>
       </div>
     </section>
 
+    <!-- INTERACTIVE TOOL SECTION -->
     <section id="outil" class="soloApp">
       <div class="container soloApp__grid">
         <div class="soloApp__panel">
-          <h2 class="soloApp__title">OK. C’est quoi ton contexte ?</h2>
-          <p class="soloApp__hint">Ça prend 10 secondes. Le reste, on s’en occupe.</p>
+          <h2 class="soloApp__title">OK. C'est quoi ton contexte ?</h2>
+          <p class="soloApp__hint">Ça prend 10 secondes. Le reste, on s'en occupe.</p>
 
           <form id="soloForm" class="form">
             <div class="formGrid">
               <div>
                 <label for="duration">Temps disponible</label>
                 <select class="select" id="duration" name="duration">
-                  <option value="quick">30–45 min</option>
-                  <option value="oneTwo" selected>1–2h</option>
-                  <option value="long">2–4h</option>
+                  <option value="quick">30-45 min</option>
+                  <option value="oneTwo" selected>1-2h</option>
+                  <option value="long">2-4h</option>
                 </select>
               </div>
 
@@ -91,7 +105,7 @@
               <div>
                 <label for="energy">Énergie sociale</label>
                 <select class="select" id="energy" name="energy">
-                  <option value="zero" selected>Zéro (je veux être invisible)</option>
+                  <option value="zero" selected>Zéro (invisible)</option>
                   <option value="low">Basse (neutre)</option>
                   <option value="neutral">OK un peu</option>
                 </select>
@@ -123,7 +137,7 @@
                   <option value="restaurant">Restaurant</option>
                   <option value="library">Bibliothèque</option>
                   <option value="museum">Musée</option>
-                  <option value="culture">Culture (gratuit/UE…)</option>
+                  <option value="culture">Culture (gratuit/UE...)</option>
                   <option value="cinema">Cinéma</option>
                   <option value="bar">Bar</option>
                   <option value="market">Marché / brocante</option>
@@ -134,8 +148,21 @@
               </div>
 
               <div class="span2 actions">
-                <button class="btn btn--solid" type="submit">OK, propose-moi 3 idées</button>
-                <button id="soloReroll" class="btn btn--ghost" type="button">Relance</button>
+                <button class="btn btn--solid" type="submit">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                  OK, propose-moi 3 idées
+                </button>
+                <button id="soloReroll" class="btn btn--ghost" type="button">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="23 4 23 10 17 10"/>
+                    <polyline points="1 20 1 14 7 14"/>
+                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+                  </svg>
+                  Relance
+                </button>
               </div>
             </div>
           </form>
@@ -143,64 +170,67 @@
 
         <div>
           <div id="soloResults"></div>
-          <p class="fine">Tu as une bonne adresse ? Nom + quartier + pourquoi c’est OK en solo. Même une phrase. (Vraiment.)</p>
+          <p class="fine">Tu as une bonne adresse ? Nom + quartier + pourquoi c'est OK en solo.</p>
         </div>
       </div>
     </section>
 
+    <!-- CONCEPT SECTION -->
     <section id="concept" class="section">
       <div class="container">
         <h2>Le concept</h2>
         <div class="grid3">
           <div class="box">
             <h3>Solo-friendly</h3>
-            <p>Pas “quoi faire à Bruxelles” en général. Juste ce qui marche quand tu es seul (sans te sentir bizarre).</p>
+            <p class="muted">Pas "quoi faire à Bruxelles" en général. Juste ce qui marche quand tu es seul (sans te sentir bizarre).</p>
           </div>
           <div class="box">
             <h3>Concret</h3>
-            <p>Fiches courtes, critères visibles, pas de blabla. Tu décides vite. Tu sors. Tu rentres. Fin.</p>
+            <p class="muted">Fiches courtes, critères visibles, pas de blabla. Tu décides vite. Tu sors. Tu rentres. Fin.</p>
           </div>
           <div class="box">
             <h3>Local</h3>
-            <p>Bruxelles d’abord (et ses coins). Le reste viendra ensuite.</p>
+            <p class="muted">Bruxelles d'abord (et ses coins). Le reste viendra ensuite.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- DATABASE SECTION -->
     <section id="bientot" class="section section--alt">
       <div class="container">
         <h2>La base (en construction)</h2>
         <div class="grid2">
           <div class="box">
-            <h3>Ce qu’on stocke</h3>
+            <h3>Ce qu'on stocke</h3>
             <ul class="bullets">
               <li>Nom + quartier</li>
               <li>Catégorie (café, musée, ciné, bar, balade…)</li>
               <li>Budget + durée typique</li>
-              <li>Pourquoi c’est OK en solo</li>
+              <li>Pourquoi c'est OK en solo</li>
             </ul>
           </div>
           <div class="box">
-            <h3>Ce qu’on fera ensuite</h3>
+            <h3>Ce qu'on fera ensuite</h3>
             <ul class="bullets">
-              <li>Ouverture / horaires (quand c’est fiable)</li>
-              <li>Mode “restaurants solo-friendly” (oui)</li>
-              <li>Mode “coloc / logement” (oui aussi)</li>
+              <li>Ouverture / horaires (quand c'est fiable)</li>
+              <li>Mode "restaurants solo-friendly" (oui)</li>
+              <li>Mode "coloc / logement" (oui aussi)</li>
             </ul>
           </div>
         </div>
-        <p class="muted">Le but : que l’outil te sorte une idée faisable en 10 secondes.</p>
+        <p class="muted" style="margin-top: 24px; text-align: center;">Le but : que l'outil te sorte une idée faisable en 10 secondes.</p>
       </div>
     </section>
 
+    <!-- CONTACT SECTION -->
     <section id="contact" class="section">
       <div class="container">
         <h2>Proposer un lieu</h2>
         <div class="contact">
           <div>
-            <p class="lead">Tu as un endroit vraiment <strong>solo-friendly</strong> ? Envoie-le ici. Je reviens si je l’ajoute (ou si j’ai une question).</p>
-            <p class="muted">Ton email n’est utilisé que pour te répondre. Pas de newsletter pour l’instant.</p>
+            <p class="lead">Tu as un endroit vraiment <strong>solo-friendly</strong> ? Envoie-le ici. Je reviens si je l'ajoute (ou si j'ai une question).</p>
+            <p class="muted">Ton email n'est utilisé que pour te répondre. Pas de newsletter.</p>
           </div>
           <div class="box">
             <form class="form" action="/contact.php" method="POST">
@@ -217,15 +247,21 @@
                 <input id="place" name="place" type="text" placeholder="Nom + quartier" required>
               </div>
               <div class="form__row">
-                <label for="why">Pourquoi c’est “sans malaise” ?</label>
+                <label for="why">Pourquoi c'est "sans malaise" ?</label>
                 <textarea id="why" name="why" rows="4" placeholder="Comptoir, ambiance calme, tables 1 pers., lecture-friendly…" required></textarea>
               </div>
               <div class="form__row">
                 <label for="details">Détails utiles (optionnel)</label>
                 <textarea id="details" name="details" rows="3" placeholder="Budget, horaires, métro, réservation…"></textarea>
               </div>
-              <button class="btn btn--solid" type="submit">Envoyer</button>
-              <p class="fine">En envoyant, tu acceptes que je te réponde si besoin. Rien d’autre.</p>
+              <button class="btn btn--solid" type="submit">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+                Envoyer
+              </button>
+              <p class="fine">En envoyant, tu acceptes que je te réponde si besoin. Rien d'autre.</p>
             </form>
           </div>
         </div>
@@ -235,7 +271,7 @@
 
   <footer class="footer">
     <div class="container">
-      <div>© <span id="year"></span> Bruxelles Solo</div>
+      <div>&copy; <span id="year"></span> Bruxelles Solo</div>
       <div class="muted">Un projet de Thom Leroy — Bruxelles</div>
     </div>
   </footer>

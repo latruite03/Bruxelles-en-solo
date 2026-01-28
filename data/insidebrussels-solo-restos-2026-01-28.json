@@ -1,0 +1,32 @@
+[
+  {
+    "id": "hinodeya",
+    "name": "Hinodeya",
+    "category": "restaurant",
+    "area": "Ixelles / Rue du Trône",
+    "address": "Rue du Trône 71, 1050 Bruxelles",
+    "transit": ["Trône"],
+    "budget": "€€",
+    "duration": {"min": 60, "max": 120},
+    "timeOfDay": ["day", "evening"],
+    "rainyOk": true,
+    "socialEnergy": "zero",
+    "soloWhy": "Comptoir + ambiance calme : tu peux manger seul en regardant la préparation, sans te sentir ‘de trop’.",
+    "links": {"website": "https://hinodeya.jimdofree.com/"}
+  },
+  {
+    "id": "yoka-tomo",
+    "name": "Yoka Tomo",
+    "category": "restaurant",
+    "area": "Schaerbeek",
+    "address": "Avenue Félix Marchal 26, 1030 Schaerbeek",
+    "transit": ["Meiser"],
+    "budget": "€€",
+    "duration": {"min": 60, "max": 120},
+    "timeOfDay": ["evening"],
+    "rainyOk": true,
+    "socialEnergy": "low",
+    "soloWhy": "Tu peux t’installer au comptoir : tu regardes le chef travailler, et l’expérience te ‘tient compagnie’.",
+    "links": {"website": "https://www.insidebrussels.be/V2/bruxelles/les-meilleurs-restaurants-ou-manger-seul-a-bruxelles/"}
+  }
+]

@@ -143,11 +143,46 @@ function renderResults(container, results){
   });
 }
 
+function enhanceSelectToPills(select){
+  // Hide select but keep it for FormData
+  select.classList.add('select--hidden');
+
+  const wrap = document.createElement('div');
+  wrap.className = 'pills';
+  wrap.setAttribute('role','group');
+  wrap.setAttribute('aria-label', select.name);
+
+  const buttons = [];
+
+  [...select.options].forEach(opt => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'pill';
+    b.textContent = opt.textContent;
+    b.setAttribute('aria-pressed', opt.selected ? 'true' : 'false');
+
+    b.addEventListener('click', () => {
+      select.value = opt.value;
+      buttons.forEach(x => x.setAttribute('aria-pressed','false'));
+      b.setAttribute('aria-pressed','true');
+      select.dispatchEvent(new Event('change', {bubbles:true}));
+    });
+
+    buttons.push(b);
+    wrap.appendChild(b);
+  });
+
+  select.insertAdjacentElement('afterend', wrap);
+}
+
 async function main(){
   const places = await loadPlaces();
   const form = document.querySelector('#soloForm');
   const out = document.querySelector('#soloResults');
   const reroll = document.querySelector('#soloReroll');
+
+  // Turn selects into pills (premium feel)
+  form.querySelectorAll('select.select').forEach(enhanceSelectToPills);
 
   let last = [];
 
@@ -176,6 +211,9 @@ async function main(){
 
   form.addEventListener('submit', (e)=>{ e.preventDefault(); compute(); });
   reroll.addEventListener('click', (e)=>{ e.preventDefault(); compute(); });
+
+  // recompute on any selection change
+  form.addEventListener('change', () => compute());
 
   // initial
   compute();

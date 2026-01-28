@@ -1,0 +1,26 @@
+[
+  {"id":"mok-coffee","solo_why":"Comptoir + ambiance tranquille. Tu peux rester 45 minutes avec un livre sans avoir l’impression de gêner."},
+  {"id":"aksum","solo_why":"Beaucoup de gens seuls (ordi, carnet, lecture). Tu te poses et tu fais ta vie."},
+  {"id":"muntpunt","solo_why":"Ici, être seul, c’est la norme. Tu lis, tu écris, tu souffles. Personne ne te calcule."},
+  {"id":"magritte","solo_why":"Visite parfaite en solo : tu t’arrêtes quand tu veux, tu passes vite quand tu veux. Zéro friction."},
+  {"id":"mim","solo_why":"Avec l’audio-guide, tu es dans ta bulle. Tu avances à ton rythme, sans te presser."},
+  {"id":"cinema-galeries","solo_why":"Le ciné solo, sans gêne : tu arrives, tu t’assois, tu sors. Personne n’attend rien de toi."},
+  {"id":"cinematek","solo_why":"Public souvent solo, films de passionnés. Tu viens pour le film, point."},
+  {"id":"moeder-lambic-fontainas","solo_why":"Le comptoir te donne une place ‘normale’. Un verre, puis tu rentres, sans justification."},
+  {"id":"mont-des-arts-sablon","solo_why":"Belle marche simple : tu t’arrêtes quand tu veux, tu repars quand tu veux. C’est ça, le luxe."},
+
+  {"id":"nuetnigenough","solo_why":"Ils savent accueillir les solos. Tu manges bien, sans te sentir ‘le client de trop’."},
+  {"id":"perruche","solo_why":"Configuration pensée pour les solos (places face à la rue / comptoir). Tu manges en regardant dehors."},
+  {"id":"frasca","solo_why":"Bar + cuisine ouverte : tu regardes le ballet, tu manges, tu repars. L’endroit fait le reste."},
+  {"id":"le-damoiselle","solo_why":"Ambiance simple, de quartier. Venir seul n’y est pas un événement (et ça fait du bien)."},
+  {"id":"nona-flagey","solo_why":"Format rapide et net : tu commandes, tu manges, tu bouges. Parfait quand tu n’as pas l’énergie de ‘faire une sortie’."},
+  {"id":"yamato-ramen","solo_why":"Petit comptoir : manger seul est normal. Tu t’installes, tu manges, tu repars."},
+  {"id":"tarzan-jane","solo_why":"Vin/tapas au bar : tu peux grignoter tranquille, sans avoir l’air d’attendre quelqu’un."},
+
+  {"id":"a-la-becasse","solo_why":"Longues tables : tu es seul, mais pas isolé. Facile de se fondre dans l’ambiance."},
+  {"id":"bonnefooi","solo_why":"Bar de nuit bon enfant : tu peux passer, rester un peu, repartir. Personne ne te juge."},
+  {"id":"cafe-bizon","solo_why":"Bar musical : la musique te tient compagnie. En solo, ça marche très bien."},
+
+  {"id":"hinodeya","solo_why":"Comptoir + calme : tu manges seul sans pression, et tu vois la préparation."},
+  {"id":"yoka-tomo","solo_why":"Comptoir + chef en action : tu regardes, tu profites. Très ‘solo-friendly’."}
+]
